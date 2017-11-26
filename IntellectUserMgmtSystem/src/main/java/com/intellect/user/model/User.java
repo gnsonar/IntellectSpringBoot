@@ -10,6 +10,16 @@ public class User {
 	private String birthDate;
 	private boolean isActive;
 	
+	public User() {}
+	public User(String id, String fname , String lname , String email , int pin, String birthDate) {
+		this.id = id;
+		this.fName = fname;
+		this.lName = lname;
+		this.email = email;
+		this.pinCode = pin;
+		this.birthDate = birthDate;
+		
+	}
 	public String getId() {
 		return id;
 	}

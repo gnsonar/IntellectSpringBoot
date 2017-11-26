@@ -61,7 +61,7 @@ public class UserServiceImpl implements UserService{
 		if(response.getVarErrors().size() == 0) {
 			for(int i = 0;i<usersRepository.size();i++) {
 				User userDb = usersRepository.get(i);
-				if(user.getId() == userDb.getId()) {
+				if(user.getId().equalsIgnoreCase(userDb.getId()) && userDb.isActive()) {
 					if(user.getPinCode() != 0 && user.getPinCode() != userDb.getPinCode()) {
 						userDb.setPinCode(user.getPinCode());
 						pinudated = true;
@@ -100,7 +100,7 @@ public class UserServiceImpl implements UserService{
 		if(response.getVarErrors().size() == 0) {
 			for(int i = 0;i<usersRepository.size();i++) {
 				User userDb = usersRepository.get(i);
-				if(user.getId() == userDb.getId()) {
+				if(user.getId().equalsIgnoreCase(userDb.getId())) {
 					userDb.setActive(false);
 					dataUpdated = true;
 					break;

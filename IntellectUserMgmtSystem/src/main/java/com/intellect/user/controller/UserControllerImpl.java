@@ -11,7 +11,7 @@ import com.intellect.user.model.User;
 import com.intellect.user.model.UserResponse;
 import com.intellect.user.service.UserServiceImpl;
 
-@RestController(value="/users")
+@RestController(value="/v1/user")
 public class UserControllerImpl implements UserController{
 
 	@Autowired
